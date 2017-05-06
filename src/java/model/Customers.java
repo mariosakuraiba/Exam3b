@@ -5,8 +5,8 @@ public class Customers {
     private int custID;
     private String firstName;
     private String lastName;
-    private String addr1;
-    private String addr2;
+    private String custAddr1;
+    private String custAddr2;
     private String custCity;
     private String custState;
     private String custZip;
@@ -16,8 +16,8 @@ public class Customers {
         this.custID = 0;
         this.firstName = "";
         this.lastName = "";
-        this.addr1 = "";
-        this.addr2 = "";
+        this.custAddr1 = "";
+        this.custAddr2 = "";
         this.custCity = "";
         this.custState = "";
         this.custZip = "";
@@ -25,12 +25,12 @@ public class Customers {
     }
     
     
-    public Customers(int custID, String firstName, String lastName, String addr1, String addr2, String custCity, String custState, String custZip, String emailAddr) {
+    public Customers(int custID, String firstName, String lastName, String custAddr1, String custAddr2, String custCity, String custState, String custZip, String emailAddr) {
         this.custID = custID;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.addr1 = addr1;
-        this.addr2 = addr2;
+        this.custAddr1 = custAddr1;
+        this.custAddr2 = custAddr2;
         this.custCity = custCity;
         this.custState = custState;
         this.custZip = custZip;
@@ -61,20 +61,20 @@ public class Customers {
         this.lastName = lastName;
     }
 
-    public String getAddr1() {
-        return addr1;
+    public String getCustAddr1() {
+        return custAddr1;
     }
 
-    public void setAddr1(String addr1) {
-        this.addr1 = addr1;
+    public void setCustAddr1(String custAddr1) {
+        this.custAddr1 = custAddr1;
     }
 
-    public String getAddr2() {
-        return addr2;
+    public String getCustAddr2() {
+        return custAddr2;
     }
 
-    public void setAddr2(String addr2) {
-        this.addr2 = addr2;
+    public void setCustAddr2(String custAddr2) {
+        this.custAddr2 = custAddr2;
     }
 
     public String getCustCity() {
@@ -111,7 +111,7 @@ public class Customers {
 
     @Override
     public String toString() {
-        return "Customers{" + "custID=" + custID + ", firstName=" + firstName + ", lastName=" + lastName + ", addr1=" + addr1 + ", addr2=" + addr2 + ", custCity=" + custCity + ", custState=" + custState + ", custZip=" + custZip + ", emailAddr=" + emailAddr + '}';
+        return "Customers{" + "custID=" + custID + ", firstName=" + firstName + ", lastName=" + lastName + ", custAddr1=" + custAddr1 + ", custAddr2=" + custAddr2 + ", custCity=" + custCity + ", custState=" + custState + ", custZip=" + custZip + ", emailAddr=" + emailAddr + '}';
     }
     
     

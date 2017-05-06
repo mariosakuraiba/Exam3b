@@ -53,7 +53,7 @@ public class ReadQuery {
         
         
             try {
-                String query = "select * from Customers ORDER BY custID ASC";
+                String query = "select * from customers ORDER BY custID ASC";
                 
                 PreparedStatement ps = conn.prepareStatement(query);
                 this.results = ps.executeQuery();
@@ -78,8 +78,8 @@ public class ReadQuery {
         table += "<th>custID</th>";
         table += "<th>firstName</th>";
         table += "<th>lastName</th>";
-        table += "<th>addr1</th>";
-        table += "<th>addr2</th>";
+        table += "<th>custAddr1</th>";
+        table += "<th>custAddr2</th>";
         table += "<th>custCity</th>";
         table += "<th>custState</th>";
         table += "<th>custZip</th>";
@@ -98,8 +98,8 @@ public class ReadQuery {
                     customer.setCustID(this.results.getInt("custID"));
                     customer.setFirstName(this.results.getString("firstName"));
                     customer.setLastName(this.results.getString("lastName"));
-                    customer.setAddr1(this.results.getString("addr1"));
-                    customer.setAddr2(this.results.getString("addr2"));
+                    customer.setCustAddr1(this.results.getString("custAddr1"));
+                    customer.setCustAddr2(this.results.getString("custAddr2"));
                     customer.setCustCity(this.results.getString("custCity"));
                     customer.setCustState(this.results.getString("custState"));
                     customer.setCustZip(this.results.getString("custZip"));
@@ -120,11 +120,11 @@ public class ReadQuery {
                     table += "</td>";
                     
                     table += "<td>";
-                    table += customer.getAddr1();
+                    table += customer.getCustAddr1();
                     table += "</td>";
                     
                     table += "<td>";
-                    table += customer.getAddr2();
+                    table += customer.getCustAddr2();
                     table += "</td>";
                     
                     table += "<td>";

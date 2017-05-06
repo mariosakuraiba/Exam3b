@@ -10,5 +10,9 @@
     <body>
         <h1>Customers Table</h1>
         <%= table %>
+        <br><br>
+        <a href="add">Add A New Course</a><br><br>
+        <a href ="search.jsp">Search Courses</a><br><br>
+        <a href="index.jsp">Return to the previous page</a>
     </body>
 </html>
