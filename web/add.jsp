@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add A New Course</title>
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>
     <body>
         <h1>Add A New Course</h1>
@@ -23,11 +23,11 @@
                 </tr>
                 <tr>
                     <td>Address1</td>
-                    <td><input type="text" name="addr1" value="" required data-validation-required-message="Please enter address." /></td>
+                    <td><input type="text" name="custAddr1" value="" required data-validation-required-message="Please enter address." /></td>
                 </tr>
                 <tr>
                     <td>Address2</td>
-                    <td><input type="text" name="addr2" value=""  /></td>
+                    <td><input type="text" name="custAddr2" value=""  /></td>
                 </tr>
                 <tr>
                     <td>City</td>
