@@ -17,6 +17,7 @@
                 <%@ include file="includes/header.jsp" %>
                 </div>
             <%@ include file="includes/main2.jsp" %>
+            
             <div class="main">
             <h1>Customers Database</h1>
             <a href="read">View All Customers</a>

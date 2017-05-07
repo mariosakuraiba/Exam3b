@@ -17,14 +17,15 @@
                 <%@ include file="includes/header.jsp" %>
                 </div>
             <%@ include file="includes/main.jsp" %>
+            
             <div class="main">
             <h1>Customers Database</h1>
-            <a href="read">View All Customers</a>
+            <a href="read2">View All Customers</a>
             <br><br>
             </div>
 		
                     
-		
+	     
 		
             <%@ include file="includes/footer.jsp" %>    
 	</div>

@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>
     <body>
+        
         <h1>Add A New Course</h1>
         
         <form name="addForm" action="addCustomer" method="get">

@@ -1,10 +1,17 @@
 <div class="main">    
 
     <ul class="navlist">
-        <li class="active"><a href="index.jsp" id="current">Home</a></li>
-        <li><a href="read">List All Courses</a></li>
+        <li class="active"><a href="staff.jsp" id="current">Home</a></li>
+        <li><a href="read">List All Customers</a></li>
         
-        <li><a href="add">Add A new Course</a></li>
+        <li><a href="add">Add A new Customer</a></li>
+        <li id="search">
+        <form name="searchForm" action="search" method="get">
+        <b> Search for customers by entering first or last name. </b>
+        <br><br>
+        <input id="text" type="text" name="searchVal" value="" />
+        <input id="button" type="submit" name="submit" value="Go"/></form>
+        </li>
         
         
     </ul>
