@@ -5,7 +5,7 @@
         <li><a href="read">List All Courses</a></li>
         
         <li><a href="add">Add A new Course</a></li>
-        <li><a href="login.jsp">Log in</a></li>
+        
         
     </ul>
     

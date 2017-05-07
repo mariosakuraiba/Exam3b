@@ -75,15 +75,15 @@ public class ReadQuery {
  
   
         table += "<tr class='tablehead'>";
-        table += "<th>custID</th>";
-        table += "<th>firstName</th>";
-        table += "<th>lastName</th>";
-        table += "<th>custAddr1</th>";
-        table += "<th>custAddr2</th>";
-        table += "<th>custCity</th>";
-        table += "<th>custState</th>";
-        table += "<th>custZip</th>";
-        table += "<th>emailAddr</th>";
+        table += "<th>Customer ID</th>";
+        table += "<th>First Name</th>";
+        table += "<th>Last Name</th>";
+        table += "<th>Address1</th>";
+        table += "<th>Address2</th>";
+        table += "<th>City</th>";
+        table += "<th>State</th>";
+        table += "<th>Zip</th>";
+        table += "<th>Email</th>";
 
         table += "</tr>";
 

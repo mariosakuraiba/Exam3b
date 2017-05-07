@@ -1,6 +1,6 @@
-<div class="main">    
+<div class="headerText">    
 
-    <h1>Welcome to Software Design HW 6</h1>
+    <h1>Welcome to Software Design</h1>
     <br>
 
 </div>
