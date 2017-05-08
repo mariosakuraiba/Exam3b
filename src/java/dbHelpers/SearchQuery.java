@@ -18,7 +18,7 @@ public class SearchQuery {
     private ResultSet results;
     
     public SearchQuery(){
-    
+        
         Properties props = new Properties();
         InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
@@ -31,11 +31,11 @@ public class SearchQuery {
         } catch (IOException ex) {
             Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        String driver = props.getProperty("driver.name");
-        String url = props.getProperty("server.name");
-        String username = props.getProperty("user.name");
-        String passwd = props.getProperty("user.password");
+    
+    String driver = props.getProperty("driver.name");
+    String url = props.getProperty("server.name");
+    String username = props.getProperty("user.name");
+    String passwd = props.getProperty("user.password");
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
@@ -46,71 +46,58 @@ public class SearchQuery {
         } catch (SQLException ex) {
             Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
     
-    public void doSearch(String firstName){
     
+    public void doSearch(String firstName){
+        
         try {
-            String query = "SELECT * FROM customers WHERE UPPER(firstName) LIKE ? OR UPPER(lastName) LIKE ?) ORDER BY custID ASC";
+            String query = "SELECT * FROM customers WHERE (UPPER(firstName) LIKE ? OR UPPER(lastName) LIKE ?) ORDER BY custID ASC";
+            
             PreparedStatement ps = conn.prepareStatement(query);
             
-            ps.setString(1, "%" + firstName.toUpperCase() +"%");
+            ps.setString(1, "%" + firstName.toUpperCase() + "%");
             ps.setString(2, "%" + firstName.toUpperCase() + "%");
             
             this.results = ps.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
-        } 
         }
-    
+    }
     
     public String getHTMLtable(){
-            String table = "";
-            table += "<table>";
-            
-            table += "<tr>";
+        
+        String table = "";
+        
+        table += "<table class= 'tableformat'>";
+        
+       
+        table += "<tr class='tablehead'>";
+        table += "<th>Customer ID</th>";
+        table += "<th>First Name</th>";
+        table += "<th>Last Name</th>";
+        table += "<th>Address 1</th>";
+        table += "<th>Address 2</th>";
+        table += "<th>City</th>";
+        table += "<th>State</th>";
+        table += "<th>Zip</th>";
+        table += "<th>Email</th>";
+        
+        table += "</tr>";
+        
+        try {
+            if(!this.results.isBeforeFirst()){
                 
-                table +="<th>";
-                table += "Customer ID";
-                table +="</th>";
-
-                table +="<th>";
-                table += "First Name";
-                table +="</th>";
-                
-                table +="<th>";
-                table += "Last Name";
-                table +="</th>";
-                
-                table +="<th>";
-                table += "Address1";
-                table +="</th>";
-                
-                table +="<th>";
-                table += "Address2";
-                table +="</th>";
-                
-                table +="<th>";
-                table += "City";
-                table +="</th>";
-                
-                table +="<th>";
-                table += "State";
-                table +="</th>";
-                
-                table +="<th>";
-                table += "Zip";
-                table +="</th>";
-                
-                table +="<th>";
-                table += "Email";
-                table +="</th>";
-                        
+                table += "<tr>";
+                table += "<td colspan='10' align='middle' >This customer does not exist</td>";
                 table += "</tr>";
                 
-        try {
-            while (this.results.next()){
+            }
             
+            else{
+            while(this.results.next()){
+                
                 Customers customer = new Customers();
                 customer.setCustID(this.results.getInt("custID"));
                 customer.setFirstName(this.results.getString("firstName"));
@@ -121,8 +108,7 @@ public class SearchQuery {
                 customer.setCustState(this.results.getString("custState"));
                 customer.setCustZip(this.results.getString("custZip"));
                 customer.setEmailAddr(this.results.getString("emailAddr"));
-                
-                
+                               
                 table += "<tr>";
                 
                 table += "<td>";
@@ -137,23 +123,23 @@ public class SearchQuery {
                 table += customer.getLastName();
                 table += "</td>";
                 
-                 table += "<td>";
+                table += "<td>";
                 table += customer.getCustAddr1();
                 table += "</td>";
                 
-                 table += "<td>";
+                table += "<td>";
                 table += customer.getCustAddr2();
                 table += "</td>";
                 
-                 table += "<td>";
+                table += "<td>";
                 table += customer.getCustCity();
                 table += "</td>";
                 
-                 table += "<td>";
+                table += "<td>";
                 table += customer.getCustState();
                 table += "</td>";
                 
-                 table += "<td>";
+                table += "<td>";
                 table += customer.getCustZip();
                 table += "</td>";
                 
@@ -162,25 +148,27 @@ public class SearchQuery {
                 table += "</td>";
                 
                 table += "<td>";
-                    table += "<a href=update?custID=" + customer.getCustID() + "><font color = 'black'> Update </font></a>" + "<a href=delete?custID=" + customer.getCustID() + "><font color = 'black'> Delete </font></a>";
-                    table += "</td>";
-                    
+                table += "<a href=update?custID=" + customer.getCustID() + "> Update </a>" + "<a href=delete?custID=" + customer.getCustID() + "> Delete </a>";
+                
+               
                 table += "</tr>";
-             
+                
             }
+                    }
         } catch (SQLException ex) {
             Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-            
-            
-            
-            table +="</table>";
-            return table;
-                   
         
-        }
+        
+        table += "</table>";
+        
+                return table;
+}
     
-    }
+}
+        
+      
+    
+    
     
     
