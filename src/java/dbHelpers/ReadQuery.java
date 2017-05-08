@@ -63,18 +63,18 @@ public class ReadQuery {
    }
    
    
-   public String getHTMLTable(){
+   public String getHTMLtable(){
    
                 
         String table = "";
    
    
-        table += "<table class= 'tableformat'>";
+        table += "<table>";
    
    
  
   
-        table += "<tr class='tablehead'>";
+        table += "<tr>";
         table += "<th>Customer ID</th>";
         table += "<th>First Name</th>";
         table += "<th>Last Name</th>";

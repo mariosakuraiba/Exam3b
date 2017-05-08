@@ -7,7 +7,7 @@
         <title>Search Customers</title>
     </head>
     <body>
-        <% String table = (String) request.getAttribute("table");%>
+        
         <h1>Customers Table</h1>
         
         <div class="wrap"> 

@@ -68,19 +68,15 @@ public class Read extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             
-            //Create a ReadQuery helper object
         ReadQuery rq = new ReadQuery();
-        
-        //Get the HTML table from the ReadQuery object
-        rq.doRead();
-        String table = rq.getHTMLTable();
-        
-        //Pass execution control to read.jsp along with the table.
-        request.setAttribute("table", table);
-        String url = "/read.jsp";
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+            rq.doRead();
+            String table = rq.getHTMLtable();
+            
+            request.setAttribute("table", table);
+            String url = "/read.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request, response);
     }
 
     /**

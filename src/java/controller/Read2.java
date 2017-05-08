@@ -80,7 +80,7 @@ public class Read2 extends HttpServlet {
         
         //Get the HTML table from the ReadQuery object
         rq.doRead();
-        String table2 = rq.getHTMLTable2();
+        String table2 = rq.getHTMLtable2();
         
         //Pass execution control to read.jsp along with the table.
         request.setAttribute("table2", table2);

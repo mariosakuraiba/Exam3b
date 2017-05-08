@@ -63,7 +63,7 @@ public class ReadQuery2 {
    }
    
    
-   public String getHTMLTable2(){
+   public String getHTMLtable2(){
    
                 
         String table2 = "";

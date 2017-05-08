@@ -68,17 +68,17 @@ public class SearchServlet extends HttpServlet {
             throws ServletException, IOException {
             
         String firstName = request.getParameter("searchVal");
-        
-        SearchQuery sq = new SearchQuery();
-        
-        sq.doSearch(firstName);
-        String table = sq.getHTMLtable();
-        
-        request.setAttribute("table", table);
-        String url = "/read.jsp";
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+            
+            SearchQuery sq = new SearchQuery();
+                       
+            sq.doSearch(firstName);
+            String table = sq.getHTMLtable();
+            
+            request.setAttribute("table", table);
+            String url = "/read.jsp";
+            
+            RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+            dispatcher.forward(request,response);
     }
 
     /**
